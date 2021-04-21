@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create your person</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+</head>
+<div class="main">
+    <div class="topMenu">
+        <div class="mainLink pageLink"><span>Create your person:</span></div>
+        <ul>
+            <li class="pageLink toMobileMenu"><span>Color</span></li>
+            <li class="pageLink toMobileMenu"><span>Face</span></li>
+            <li class="pageLink toMobileMenu"><span>Hat</span></li>
+            <li class="pageLink toMobileMenu"><span>Outerwear</span></li>
+            <li class="pageLink toMobileMenu"><span>Pants</span></li>
+            <li class="pageLink toMobileMenu"><span>Footwear</span></li>
+            <li class="pageLink toMobileMenu"><span>Accessories</span></li>
+        </ul>
+    </div>
+    <div class="inventory" >
+        <div class="create page">
+            <div class="selectName">
+                <p>Ваше имя:</p>
+                <input id="nickName" type="text">
+            </div>
+            <div onmousedown="return false">
+            <div class="selectBody settingRow">
+                <div class="selectShown">
+                    <span>Настройки тела</span>
+                </div>
+                <div class="selectUnShown" id="bodyUnShown">
+                    <div class="growth">
+                        <h3 id="createBodyText">Рост:</h3>
+                        <div class="linerCreateBody">
+                            <div id="line"></div>
+                            <div id="pls"></div>
+                        </div>
+                        <p id="toSquire">Карлик</p>
+                        <p id="toLinea">Титан</p>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="weight">
+                        <div class="weightText"><span>Вес:</span></div>
+                        <div id="linerCreateWeight">
+                            <div id="lineWeight"></div>
+                            <div id="WeightSlider"></div>
+                        </div>
+                        <p id="weightMin">Глиста в <br> карсете</p>
+                        <p id="weightMax">Нейтронная <br> звезда</p>
+                    </div>
+                </div>
+            </div>
+            <div class="selectHead settingRow">
+                <div class="selectShown">
+                    <span>Настройки головы</span>
+                </div>
+                <div class="selectUnShown" id="headUnShown">
+                    <div class="addHead" onclick="drawHead()">
+                        <div class="addHeadButton"></div>
+                        <span>Добавить голову</span>
+                    </div>
+                    <label class="useDefaultHead">
+                        <input type="checkbox" id="useDefaultHeadCheck" checked>
+                        <span>Использовать размер головы по умолчанию</span>
+                    </label>
+                    <div class="headSize">
+                        <div class="headSizeText">Размер головы:</div>
+                        <div class="headSizeSlider">
+                            <div class="headSizeMin">Вставьте свою<br>шутку сюда</div>
+                            <div class="headLineaDiv">
+                                <div class="headLine"></div>
+                                <div class="headSlider"></div>
+                            </div>
+                            <div class="headSizeMax">Мега <br>мозг</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="selectHands settingRow">
+                <div class="selectShown" id="handShown">
+                    <div class="selectHandsText"><span>Настройки рук</span></div>
+                </div>
+                <div class="selectUnShown" id="handUnShown">
+                    <div class="handPosRow">
+                        <div class="handPosTextSS">
+                            <span>Выбрать руки:</span>
+                            <img src="img/iconfinder_alert-triangle_2561317.png" alt="" id="handPosTextIMG">
+                        </div>
+                        <div class="HandPosDiv" onclick="drawAll()">
+                            <div class="HandPosText"><span>Левая рука</span></div>
+                            <div class="HandPosText"><span>Правая рука</span></div>
+                            <div class="HandPos">
+                                <div id="leftHandPos1">
+                                    <div class="showHand showHandRev handLeft">
+                                        <div class="showHand1" id="showHand11"></div>
+                                        <div class="showHand2" id="showHand12"></div>
+                                        <div class="showHand3" id="showHand13"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos1">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand21"></div>
+                                        <div class="showHand2" id="showHand22"></div>
+                                        <div class="showHand3" id="showHand23"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="leftHandPos2">
+                                    <div class="showHand handLeft">
+                                        <div class="showHand1" id="showHand31"></div>
+                                        <div class="showHand2" id="showHand32"></div>
+                                        <div class="showHand3" id="showHand33"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos2">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand41"></div>
+                                        <div class="showHand2" id="showHand42"></div>
+                                        <div class="showHand3" id="showHand43"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="leftHandPos3">
+                                    <div class="showHand handLeft">
+                                        <div class="showHand1" id="showHand51"></div>
+                                        <div class="showHand2" id="showHand52"></div>
+                                        <div class="showHand3" id="showHand53"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos3">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand61"></div>
+                                        <div class="showHand2" id="showHand62"></div>
+                                        <div class="showHand3" id="showHand63"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="leftHandPos4">
+                                    <div class="showHand showHandRev handLeft">
+                                        <div class="showHand1" id="showHand71"></div>
+                                        <div id="rot1">
+                                            <div class="showHand2" id="showHand72"></div>
+                                            <div class="showHand3" id="showHand73"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos4">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand81"></div>
+                                        <div id="rot2">
+                                            <div class="showHand2" id="showHand82"></div>
+                                            <div class="showHand3" id="showHand83"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="leftHandPos5">
+                                    <div class="showHand showHandRev handLeft">
+                                        <div class="showHand1" id="showHand91"></div>
+                                        <div id="rot3">
+                                            <div class="showHand2" id="showHand92"></div>
+                                            <div class="showHand3" id="showHand93"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos5">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand101"></div>
+                                        <div id="rot4">
+                                            <div class="showHand2" id="showHand102"></div>
+                                            <div class="showHand3" id="showHand103"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="leftHandPos6">
+                                    <div class="showHand showHandRev handLeft">
+                                        <div class="showHand1" id="showHand111"></div>
+                                        <div id="rot5">
+                                            <div class="showHand2" id="showHand112"></div>
+                                            <div class="showHand3" id="showHand113"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos6">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand121"></div>
+                                        <div id="rot6">
+                                            <div class="showHand2" id="showHand122"></div>
+                                            <div class="showHand3" id="showHand123"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <div class="HandPos">
+                                <div id="leftHandPos7">
+                                    <div class="showHand showHandRev handLeft">
+                                        <div class="showHand1" id="showHand131"></div>
+                                        <div id="rot7">
+                                            <div class="showHand2" id="showHand132"></div>
+                                            <div class="showHand3" id="showHand133"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="HandPos">
+                                <div id="rightHandPos7">
+                                    <div class="showHand handRight">
+                                        <div class="showHand1" id="showHand141"></div>
+                                        <div id="rot8">
+                                            <div class="showHand2" id="showHand142"></div>
+                                            <div class="showHand3" id="showHand143"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <label class="useDefaultHands">
+                        <input type="checkbox" id="useDefaultHandsCheck" checked>
+                        <span>Использовать размер рук по умолчанию</span>
+                    </label>
+                    <div id="HandNonDef">
+                        <div class="allSlider">
+                            <div class="sliderText">Длина рук:</div>
+                            <div class="sliderWT">
+                                <div class="sliderMinText">T-rex</div>
+                                <div id="handLengthSliderDiv" class="mainSlider">
+                                    <div class="sliderLine"></div>
+                                    <div id="handSlide" class="sliderSlide"></div>
+                                </div>
+                                <div class="sliderMaxText">Slander-<br>man</div>
+                            </div>
+                        </div>
+                        <div id="handWidth" class="allSlider">
+                            <div class="sliderText">Ширина рук:</div>
+                            <div id="handWidthSlider" class="sliderWT">
+                                <div id="handWidthMin" class="sliderMinText">Мама <br>не <br>комит</div>
+                                <div id="handWidthSliderDiv" class="mainSlider">
+                                    <div class="sliderLine"></div>
+                                    <div id="handWidthSlide" class="sliderSlide"></div>
+                                </div>
+                                <div id="handWidthMax" class="sliderMaxText">Руки -<br>базуки</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="selectLeg settingRow">
+                <div class="selectShown">
+                    <span>Настройки ног</span>
+                </div>
+                <div class="selectUnShown" id="legUnShown">
+                    <div class="addLeg" onclick="isLegsDrawn = true;drawAll()">
+                        <div class="addHeadButton addLegButton"></div>
+                        <span>Добавить ноги</span>
+                    </div>
+                    <label class="useDefaultLeg">
+                        <input type="checkbox" id="useDefaultLegCheck" checked>
+                        <span>Использовать размер ног по умолчанию</span>
+                    </label>
+                    <div id="noneDefLeg">
+                    <div class="allSlider">
+                        <div class="sliderText">Длина ног:</div>
+                        <div class="sliderWT">
+                            <div class="sliderMinText" id="legHeightMin">Коротко- <br>ножка</div>
+                            <div id="lagLengthSliderDiv" class="mainSlider">
+                                <div class="sliderLine"></div>
+                                <div id="lagSlide" class="sliderSlide"></div>
+                            </div>
+                            <div class="sliderMaxText" id="legHeightMax">Кузнечик</div>
+                        </div>
+                    </div>
+                    <div id="legWidth" class="allSlider">
+                        <div class="sliderText">Ширина ног:</div>
+                        <div id="legWidthSlider" class="sliderWT">
+                            <div id="legWidthMin" class="sliderMinText">Пропускал <br> день ног</div>
+                            <div id="legWidthSliderDiv" class="mainSlider">
+                                <div class="sliderLine"></div>
+                                <div id="lagWidthSlide" class="sliderSlide"></div>
+                            </div>
+                            <div id="lagWidthMax" class="sliderMaxText">Ноги -<br>ракеты</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="invToScroll"></div>
+        </div>
+        <div class="color page">
+            <div class="selectColor"><span>Выберите цвет:</span></div>
+            <div class="colorsDiv">
+                <div class="colorSpector">
+                    <div class="colorDiv colorActive"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                    <div class="colorDiv"></div>
+                </div>
+                <div class="pushingColor">
+                    <div id="pushColor" onclick="openModalWin()"></div>
+                </div>
+            </div>
+        </div>
+        <div class="face"></div>
+        <div class="outerwear"></div>
+        <div class="pants"></div>
+        <div class="footwear"></div>
+        <div class="accessories"></div>
+    </div>
+    <div class="person">
+        <div class="inCanvas" id="hand11"></div>
+        <div class="inCanvas" id="hand12"></div>
+        <div class="inCanvas" id="hand13"></div>
+        <div class="inCanvas" id="hand21"></div>
+        <div class="inCanvas" id="hand22"></div>
+        <div class="inCanvas" id="hand23"></div>
+        <div class="inCanvas" id="leg11"></div>
+        <div class="inCanvas" id="leg12"></div>
+        <div class="inCanvas" id="leg13"></div>
+        <div class="inCanvas" id="leg21"></div>
+        <div class="inCanvas" id="leg22"></div>
+        <div class="inCanvas" id="leg23"></div>
+        <div id="scale"></div>
+        <canvas id="canvas"></canvas>
+    </div>
+</div>
+<div class="ModalWin">
+    <div class="blackLivesMatter" onclick="extrCloseMod()"></div>
+    <div class="colorModal">
+        <div><p>Введите цвет, <br> который вы хотите добавить <br>(Название цвета на <br>английском, HEX, RGB)</p></div>
+        <input value="#" type="text" id="colorModalText"
+               onfocus="this.style.transform = 'translateX(-50%) scale(1.1)'; this.style.transition = '1s'"
+               onblur="this.style.transform = 'translateX(-50%) scale(1)'; this.style.transition = '0.5s'">
+        <button id="grad" onclick="closeModalWin()">Готово</button>
+        <div id="showColor"></div>
+    </div>
+</div>
+
+<div id="mobileMenuShow"><span>Эта кнопка для дурачков с телефона. Тыкайте сюда</span></div>
+<div id="mobileMenuHide"><span>Эта кнопка для дурачков с телефона. Тыкайте сюда</span></div>
+
+<div id="extraHerb" style="position: absolute"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
